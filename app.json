@@ -1,0 +1,18 @@
+{
+  "name":        "Chameleon",
+  "description": "Quick free Dropbox to Heroku static site (a la Dropbox Public folder)",
+  "repository":  "https://github.com/owyongsk/chameleon",
+  "keywords":    ["static","elixir","plug","dropbox","heroku"],
+  "env": {
+    "DROPBOX_TOKEN": {
+      "description": "Get this token after you created your app on Dropbox and generated a token",
+      "value":       "never_gonna_give_you_up",
+      "required":    true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+    }
+  ]
+}
