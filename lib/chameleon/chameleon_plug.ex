@@ -10,12 +10,14 @@ defmodule Chameleon.ChameleonPlug do
     [_, filetype] = List.last(conn.path_info) |> String.split(".")
     content_type  = case String.downcase(filetype) do
                      "html" -> "text/html"
-                     "txt"  -> "text/text"
+                     "txt"  -> "text/plain"
+                     "css"  -> "text/css"
                      "js"   -> "text/javascript"
                      "jpg"  -> "image/jpeg"
                      "jpeg" -> "image/jpeg"
                      "png"  -> "image/png"
-                     "json" -> "application/json"
+                     "ico"  -> "image/x-icon"
+                     _      -> "application/json"
                    end
 
     token       = System.get_env("DROPBOX_TOKEN")
