@@ -1,7 +1,11 @@
+![Chameleon](https://chameleon-sk.herokuapp.com/chameleon/icon_128.png)
+
+Icon made by [Freepik](www.freepik.com) from (www.flaticon.com)
+
 Chameleon
 =========
 
-A quick and simple roll your own Dropbox public folder.
+A quick and simple roll your own Dropbox public folder (on your Dropbox).
 
 ## Instalation
 
@@ -21,11 +25,9 @@ Or you can deploy to Heroku for free!
 
 ## TODO
 
-  1. Supports multiple filetypes
-  2. Caching?
-  3. Tests?
-  4. Error pages?
-  5. Dev environment
-  6. Bug where this only works in heroku
+  * Caching?
+  * Tests?
+  * Error pages?
+  * Dev environment
   
   Pull requests or feedback welcomed!
