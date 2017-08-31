@@ -1,5 +1,6 @@
 defmodule Chameleon.ChameleonPlug do
   import Plug.Conn
+  require Logger
 
   def init(options), do: options
 
@@ -24,6 +25,8 @@ defmodule Chameleon.ChameleonPlug do
     dropbox_url = "https://content.dropboxapi.com/2/files/download"
     headers     = ["Authorization":   "Bearer #{token}",
                    "Dropbox-API-Arg": "{\"path\":\"#{conn.request_path}\"}"]
+
+    Logger.info conn.request_path
 
     case HTTPoison.post(dropbox_url, "", headers) do
       {:ok, response } -> conn
