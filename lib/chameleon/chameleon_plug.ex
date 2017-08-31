@@ -6,8 +6,7 @@ defmodule Chameleon.ChameleonPlug do
   def call(conn, _opts) do
     HTTPoison.start
 
-    filepath      = Enum.join(conn.path_info, "/")
-    [_, filetype] = List.last(conn.path_info) |> String.split(".")
+    filetype      = conn.request_path |> String.split(".") |> List.last
     content_type  = case String.downcase(filetype) do
                      "html" -> "text/html"
                      "txt"  -> "text/plain"
@@ -23,7 +22,7 @@ defmodule Chameleon.ChameleonPlug do
     token       = System.get_env("DROPBOX_TOKEN")
     dropbox_url = "https://content.dropboxapi.com/2/files/download"
     headers     = ["Authorization":   "Bearer #{token}",
-                   "Dropbox-API-Arg": "{\"path\":\"/#{filepath}\"}"]
+                   "Dropbox-API-Arg": "{\"path\":\"#{conn.request_path}\"}"]
 
     case HTTPoison.post(dropbox_url, "", headers) do
       {:ok, response } -> conn
