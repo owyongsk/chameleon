@@ -13,7 +13,7 @@ defmodule Chameleon.ChameleonPlug do
                      "txt"  -> "text/plain"
                      "css"  -> "text/css"
                      "js"   -> "text/javascript"
-                     "pdf"  -> "application/octet-stream"
+                     "pdf"  -> "application/pdf"
                      "jpg"  -> "image/jpeg"
                      "jpeg" -> "image/jpeg"
                      "png"  -> "image/png"
