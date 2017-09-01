@@ -13,12 +13,14 @@ defmodule Chameleon.ChameleonPlug do
                      "txt"  -> "text/plain"
                      "css"  -> "text/css"
                      "js"   -> "text/javascript"
-                     "pdf"  -> "application/pdf"
+                     "vtt"  -> "text/vtt"
                      "jpg"  -> "image/jpeg"
                      "jpeg" -> "image/jpeg"
                      "png"  -> "image/png"
                      "ico"  -> "image/x-icon"
-                     _      -> "application/json"
+                     "pdf"  -> "application/pdf"
+                     "json" -> "application/json"
+                     _      -> "application/octet-stream"
                    end
 
     token       = System.get_env("DROPBOX_TOKEN")
@@ -26,15 +28,21 @@ defmodule Chameleon.ChameleonPlug do
     headers     = ["Authorization":   "Bearer #{token}",
                    "Dropbox-API-Arg": "{\"path\":\"#{conn.request_path}\"}"]
 
-    Logger.info conn.request_path
-
     case HTTPoison.post(dropbox_url, "", headers) do
-      {:ok, response } -> conn
-        |> put_resp_content_type(content_type)
-        |> send_resp(response.status_code, response.body)
-      {:error, error } -> conn
-        |> put_status(:not_found)
-        |> send_resp(error.status_code, error.body)
+      {_, response} ->
+        case response.status_code do
+          200 ->
+            Logger.info "#{response.status_code} #{conn.request_path}"
+            conn
+            |> put_resp_content_type(content_type)
+            |> send_resp(response.status_code, response.body)
+          _   ->
+            Logger.info "#{response.status_code} #{conn.request_path}"
+            conn
+            |> put_status(:not_found)
+            |> send_resp(response.status_code, response.body)
+        end
+
     end
   end
 end
