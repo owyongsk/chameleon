@@ -9,7 +9,7 @@ defmodule Chameleon.ChameleonPlug do
     conn |> send_resp(200,
       "Move your files to your ~/Dropbox/Apps/'newly-named-app'/ folder\n\n" <>
       "eg: If you have ~/Dropbox/Apps/'newly-named-app'/resume.html    \n\n" <>
-      "then go to #{conn.host}/resume.html")
+      "then go to #{conn.host}:#{conn.port}/resume.html")
   end
 
   def call(conn, _opts) do
