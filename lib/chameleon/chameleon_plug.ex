@@ -4,6 +4,14 @@ defmodule Chameleon.ChameleonPlug do
 
   def init(options), do: options
 
+  def call(%Plug.Conn{request_path: "/"} = conn, _opts) do
+    Logger.info "200 /"
+    conn |> send_resp(200,
+      "Move your files to your ~/Dropbox/Apps/'newly-named-app'/ folder\n\n" <>
+      "eg: If you have ~/Dropbox/Apps/'newly-named-app'/resume.html    \n\n" <>
+      "then go to #{conn.host}/resume.html")
+  end
+
   def call(conn, _opts) do
     HTTPoison.start
 
