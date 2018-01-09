@@ -29,7 +29,7 @@ A quick and simple roll your own Dropbox public folder (on your Dropbox).
 
 ## Caution!
   * Might get rate limited by Dropbox at some point, each browser get request is an API call to Dropbox.
-  * Heroku's free tier might put your app to sleep, use uptimerobot.com to ping your site if you want it up all the time
+  * Heroku's free tier might put your app to sleep, use [uptimerobot](https://uptimerobot.com) to ping your site if you want it up all the time
 
 ## TODO
 
