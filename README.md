@@ -1,4 +1,4 @@
-![Chameleon](https://chameleon-sk.herokuapp.com/chameleon/icon_128.png)
+![Refresh until image loads](https://chameleon-sk.herokuapp.com/chameleon/icon_128.png)
 
 Icon made by [Freepik](www.freepik.com) from (www.flaticon.com)
 
@@ -11,7 +11,7 @@ A quick and simple roll your own Dropbox public folder (on your Dropbox).
 
   1. Create an app on your https://www.dropbox.com/developers/apps/create, choose "Dropbox API", set
      permissions to "Apps folder", generate a token
-     ![Dropbox New App](https://chameleon-sk.herokuapp.com/chameleon/dropbox_new_app.png "Dropbox New App")
+     ![Refresh until image loads](https://chameleon-sk.herokuapp.com/chameleon/dropbox_new_app.png)
   2. [Deploy](https://heroku.com/deploy?template=https://github.com/owyongsk/chameleon&env[DROPBOX_TOKEN=never_gonna_give_you_up]) this app to heroku.
   3. Set your token as env variable DROPBOX_TOKEN
   4. Move all your files to your `~/Dropbox/Apps/'dropbox-app-name-earlier'` folder
