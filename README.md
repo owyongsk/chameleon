@@ -1,9 +1,12 @@
-![Refresh until image loads](https://chameleon-sk.herokuapp.com/chameleon/icon_128.png)
+![Refresh until image loads](https://chameleon.owyong.sk/chameleon/icon_128.png)
 
 Icon made by [Freepik](www.freepik.com) from (www.flaticon.com)
 
 Chameleon
 =========
+
+Note: Since heroku is no longer free, you can use the Cloudflare Workers version!
+See https://gist.github.com/owyongsk/5078d63a6a5439d428dd44a6cc289983
 
 A quick and simple roll your own Dropbox public folder (on your Dropbox).
 
